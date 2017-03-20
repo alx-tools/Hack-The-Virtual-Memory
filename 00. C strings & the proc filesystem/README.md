@@ -12,8 +12,11 @@ For this first piece, we'll use `/proc` to find and modify variables (in this ex
 
 All scripts and programs have been tested on the following system:
 
-- Ubuntu
+- Ubuntu 14.04 LTS
   - Linux ubuntu 4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
+### Programs used in this article
+
 - gcc
   - gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
 - Python 3:
