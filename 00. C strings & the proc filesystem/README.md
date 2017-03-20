@@ -20,6 +20,14 @@ All scripts and programs have been tested on the following system:
   - Python 3.4.3 (default, Nov 17 2016, 01:08:31) 
   - \[GCC 4.8.4\] on linux
 
+## Prerequisites
+
+In order to fully understand this article, you need to know:
+
+- The basics of the C programming language
+- Some Python
+- The very basics of the Linux filesystem and the shell
+
 ## Virtual Memory
 
 In computing, virtual memory is a memory management technique that is implemented using both hardware and software. It maps memory addresses used by a program, called virtual addresses, into physical addresses in computer memory. Main storage (as seen by a process or task) appears as a contiguous address space, or collection of contiguous segments. The operating system manages virtual address spaces and the assignment of real memory to virtual memory. Address translation hardware in the CPU, often referred to as a memory management unit or MMU, automatically translates virtual addresses to physical addresses. Software within the operating system may extend these capabilities to provide a virtual address space that can exceed the capacity of real memory and thus reference more memory than is physically present in the computer.
