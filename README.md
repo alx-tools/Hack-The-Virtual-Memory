@@ -6,7 +6,7 @@ This is a series of small articles / tutorials based around virtual memory. The 
 
 ## TOC
 
-### 00. C strings & /proc
+### 00. C strings & `/proc`
 
 For this first piece, we'll use `/proc` to find and modify variables (in this example, an ASCII string) contained inside the virtual memory of a running process, and learn some cool things along the way.
 
