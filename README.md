@@ -12,13 +12,16 @@ For this first piece, we'll use `/proc` to find and modify variables (in this ex
 
 ### 01. Python bytes
 
-For this second piece, we do almost the same thing, but instead we access the virtual memory of a running Python 3 script. It is not as straightfoward. Let's take this as an excuse to look at some Python 3 internals!
+For this second piece, we'll do almost the same thing, but instead we will access the virtual memory of a running Python 3 script. It is not as straightfoward. Let's take this as an excuse to look at some Python 3 internals!
+
+Status: _Working on it_
 
 ### 02. What's where in the virtual memory
 
 Let's try to guess where things are in the virtual memory.
 
+Status: _Working on it_
+
 ### 03. TBA
 
-_Working on it_
-
+Status: _Working on it_
