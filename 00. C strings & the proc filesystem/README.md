@@ -617,7 +617,7 @@ As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 
 ### Files
 
-This repo contains the source code for all programs shown in this tutorial:
+[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/00.%20C%20strings%20%26%20the%20proc%20filesystem) contains the source code for all programs shown in this tutorial:
 
 - `main.c`: the first C program that prints the location of the string and exits
 - `loop.c`: the second C program that loops indefinitely
