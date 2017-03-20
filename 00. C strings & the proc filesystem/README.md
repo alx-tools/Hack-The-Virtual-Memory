@@ -1,4 +1,4 @@
-# Hack The Virtual Memory #0
+# Hack The Virtual Memory: C strings & `/proc`
 
 ![hack the vm!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack_the_vm_0.png)
 
