@@ -637,3 +637,5 @@ As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 In the next piece we'll do almost the same thing, but instead we'll access the memory of a running Python 3 script. It won't be that straightfoward. We'll take this as an excuse to look at some Python 3 internals. If you are curious, try to do it yourself, and find out why the above `read_write_heap.py` script won't work to modify a Python 3 ASCII string.
 
 See you next time and Happy Hacking!
+
+_Many thanks to [Kristine](https://twitter.com/codechick1), [Tim](https://twitter.com/wintermanc3r) for English proof-reading & [Guillaume](https://twitter.com/guillaumesalva) for PEP8 proof-reading :)_
