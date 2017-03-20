@@ -1,8 +1,9 @@
-# Hack The Virtual Memory: C strings & `/proc`
 
 ![hack the vm!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack_the_vm_0.png)
 
 ## Intro
+
+### Hack The Virtual Memory: C strings & `/proc`
 
 This is the first in a series of small articles / tutorials based around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
 
