@@ -3,7 +3,7 @@
 
 ## Intro
 
-### Hack The Virtual Memory: C strings & `/proc`
+### Hack The Virtual Memory: Play with C strings & `/proc`
 
 This is the first in a series of small articles / tutorials based around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
 
