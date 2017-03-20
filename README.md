@@ -24,4 +24,3 @@ Status: _Working on it_
 
 ### 03. TBA
 
-Status: _Working on it_
