@@ -673,6 +673,7 @@ As expected:
 Annnnnnd, we have found the exact address of our string: `0x7f04d721b230` \o/
 
 ![monty python](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/tumblr_nomr17FFSt1tym3lfo1_400.gif)
+
 _Sorry I had to add at least one Monty Python reference :) ([why](https://docs.python.org/3.4/faq/general.html#why-is-it-called-python))_
 
 ## rw_all.py
