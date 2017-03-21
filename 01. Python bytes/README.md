@@ -1,4 +1,4 @@
-![hack the vm!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack_the_vm_0.png)
+![hack the vm!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hacke_the_vm_1.png)
 
 ## Hack The Virtual Memory, Chapter 1: Python bytes
 
@@ -116,7 +116,7 @@ julien@holberton:~/holberton/w/hackthevm1$
 
 Wait, WAT?!
 
-![WAT!]()
+![WAT!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/giphy-4.gif)
 
 We found the string "Holberton" and replaced it, but it was not the correct string?
 Before we go down the rabbit hole, we have one more thing to check. Our script stops when it finds the first occurence of the string. Let's run it several times to see if there are more occurences of the same string in the heap.
@@ -672,7 +672,7 @@ As expected:
 
 Annnnnnd, we have found the exact address of our string: `0x7f04d721b230` \o/
 
-![monty python]()
+![monty python](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/tumblr_nomr17FFSt1tym3lfo1_400.gif)
 _Sorry I had to add at least one Monty Python reference :) ([why](https://docs.python.org/3.4/faq/general.html#why-is-it-called-python))_
 
 ## rw_all.py
@@ -883,7 +883,7 @@ julien@holberton:~/holberton/w/hackthevm1$
 
 BOOM!
 
-![happy]()
+![yeah!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/giphy-3.gif)
 
 ## Outro
 
@@ -919,3 +919,5 @@ As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 - `read_write_stack.py`: same but, searches and replaces in the stack instead of the heap
 - `rw_all.py`: same but in every memory regions that are readable and writable
 - `bytes.c`: the C function to print info about a Python 3 bytes object
+
+_Many thanks to [Tim](https://twitter.com/wintermanc3r) for English proof-reading & [Guillaume](https://twitter.com/guillaumesalva) for PEP8 proof-reading :)_
