@@ -676,7 +676,7 @@ Annnnnnd, we have found the exact address of our string: `0x7f04d721b230` \o/
 
 _Sorry I had to add at least one Monty Python reference :) ([why](https://docs.python.org/3.4/faq/general.html#why-is-it-called-python))_
 
-## rw_all.py
+## `rw_all.py`
 
 Now that we undertand a little bit more about what's happening, it's ok to "brute-force" the mapped memory regions. Let's update the script that replaces the string. Instead of looking only in the stack or the heap, let's look in all readable and writeable memory regions of the process. Here's the source code:
 
