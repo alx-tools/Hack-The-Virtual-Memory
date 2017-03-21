@@ -1,8 +1,9 @@
-# Hack The Virtual Memory #0
 
 ![hack the vm!](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack_the_vm_0.png)
 
 ## Intro
+
+### Hack The Virtual Memory: Play with C strings & `/proc`
 
 This is the first in a series of small articles / tutorials based around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
 
@@ -12,13 +13,21 @@ For this first piece, we'll use `/proc` to find and modify variables (in this ex
 
 All scripts and programs have been tested on the following system:
 
-- Ubuntu
+- Ubuntu 14.04 LTS
   - Linux ubuntu 4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 - gcc
   - gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
 - Python 3:
   - Python 3.4.3 (default, Nov 17 2016, 01:08:31) 
   - \[GCC 4.8.4\] on linux
+
+## Prerequisites
+
+In order to fully understand this article, you need to know:
+
+- The basics of the C programming language
+- Some Python
+- The very basics of the Linux filesystem and the shell
 
 ## Virtual Memory
 
@@ -613,11 +622,11 @@ Happy Hacking!
 
 ### Thank you for reading!
 
-As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments.
+As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to [contribute](https://github.com/holbertonschool/Hack-The-Virtual-Memory) or send me your comments.
 
 ### Files
 
-This repo contains the source code for all programs shown in this tutorial:
+[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/00.%20C%20strings%20%26%20the%20proc%20filesystem) contains the source code for all programs shown in this tutorial:
 
 - `main.c`: the first C program that prints the location of the string and exits
 - `loop.c`: the second C program that loops indefinitely
@@ -628,3 +637,5 @@ This repo contains the source code for all programs shown in this tutorial:
 In the next piece we'll do almost the same thing, but instead we'll access the memory of a running Python 3 script. It won't be that straightfoward. We'll take this as an excuse to look at some Python 3 internals. If you are curious, try to do it yourself, and find out why the above `read_write_heap.py` script won't work to modify a Python 3 ASCII string.
 
 See you next time and Happy Hacking!
+
+_Many thanks to [Kristine](https://twitter.com/codechick1), [Tim](https://twitter.com/wintermanc3r) for English proof-reading & [Guillaume](https://twitter.com/guillaumesalva) for PEP8 proof-reading :)_
