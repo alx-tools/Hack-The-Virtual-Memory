@@ -16,7 +16,7 @@ Status: _Published_
 
 For this second piece, we'll do almost the same thing, but instead we will access the virtual memory of a running Python 3 script. It is not as straightfoward. Let's take this as an excuse to look at some Python 3 internals!
 
-Status: _Working on it_
+Status: _Published_
 
 ### 02. What's where in the virtual memory
 
