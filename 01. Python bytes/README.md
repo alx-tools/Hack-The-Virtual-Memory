@@ -73,7 +73,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 Everything in Python is an object: integers, strings, bytes, functions, everything. So the line `s = b"Holberton"` should create an object of type `bytes`, and store the string `b"Holberton` somewhere in memory. Probably in the heap since it has to reserve space for the object and the bytes referenced by or stored in the object (at this point we don't know about the exact implementation).
 
-## Running read_write_heap.py against the Python script
+## Running `read_write_heap.py` against the Python script
 
 _Note: `read_write_heap.py` is a script we wrote in the previous chapter [chapter 0: C strings & /proc](https://blog.holbertonschool.com/hack-the-virtual-memory-c-strings-proc/)_
 
