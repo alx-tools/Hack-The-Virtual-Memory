@@ -22,7 +22,7 @@ Status: _Published_
 
 Let's try to guess where things are in the virtual memory.
 
-Status: _Working on it_
+Status: _Published_
 
 ### 03. TBA
 
