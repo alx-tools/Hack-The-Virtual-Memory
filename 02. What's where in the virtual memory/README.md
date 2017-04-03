@@ -691,7 +691,7 @@ Happy Hacking!
 
 ### Thank you for reading!
 
-As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments if you find anything I missed.
+As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to [contribute](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/02.%20What's%20where%20in%20the%20virtual%20memory) or send me your comments if you find anything I missed.
 
 ### Files
 
