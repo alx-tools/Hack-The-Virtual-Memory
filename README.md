@@ -24,5 +24,8 @@ Let's try to guess where things are in the virtual memory.
 
 Status: _Published_
 
-### 03. TBA
+### 03. malloc, the heap and the program break
 
+In this fourth chapter we will look at the heap and how malloc works in order to answer some of the questions we ended with at the end of the previous chapter.
+
+Status: _In progress_
