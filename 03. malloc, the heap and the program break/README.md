@@ -2,7 +2,7 @@
 
 # Hack The Virtual Memory, chapter 3: malloc, the heap and the program break
 
-This is the fourth chapter in a series around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
+This is the fourth chapter in a series around virtual memory. The goal of this series is to learn some CS basics, but in a different and more practical way.
 
 If you missed the previous chapters, you should probably start there:
 
