@@ -1196,7 +1196,7 @@ As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 
 ### Files
 
-[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/03.%20malloc%2C%20the%20heap%20and%20the%20program%20break) contains the source code (`naive_malloc.c`, `version.c` & ``X-main.c` files) for programs created in this tutorial.
+[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/03.%20malloc%2C%20the%20heap%20and%20the%20program%20break) contains the source code (`naive_malloc.c`, `version.c` & `X-main.c` files) for programs created in this tutorial.
 
 ### Read more about the virtual memory
 
