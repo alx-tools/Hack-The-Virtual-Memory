@@ -414,7 +414,7 @@ Let's update our diagram with what we learned.
 
 ![virtual memory with command line arguments and environment variables](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/virtual_memory_args_env.png)
 
-## Is the stack realy growing downwards?
+## Is the stack really growing downwards?
 
 Let's call a function and figure this out! If this is true, then the variables of the calling function will be higher in memory than those from the called function (`main-6.c`).
 
@@ -691,7 +691,7 @@ Happy Hacking!
 
 ### Thank you for reading!
 
-As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments if you find anything I missed.
+As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to [contribute](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/02.%20What's%20where%20in%20the%20virtual%20memory) or send me your comments if you find anything I missed.
 
 ### Files
 
