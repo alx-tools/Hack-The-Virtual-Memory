@@ -1192,7 +1192,7 @@ Happy Hacking!
 
 ### Thank you for reading!
 
-As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments if you find anything I missed.
+As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to [contribute](https://github.com/holbertonschool/Hack-The-Virtual-Memory/blob/master/03.%20malloc,%20the%20heap%20and%20the%20program%20break/) or send me your comments if you find anything I missed.
 
 ### Files
 
