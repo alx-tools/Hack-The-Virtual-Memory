@@ -36,7 +36,7 @@ Tools used:
   
 - gcc
   - gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
-- glibc 2.19 (see `version.c` if you need to check your glibc version)
+- glibc 2.19 (see `[version.c](https://github.com/holbertonschool/Hack-The-Virtual-Memory/blob/master/03.%20malloc%2C%20the%20heap%20and%20the%20program%20break/version.c)` if you need to check your glibc version)
 - strace
   - strace -- version 4.8
 
@@ -1196,7 +1196,7 @@ As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 
 ### Files
 
-[This repo]() contains the source code (`X-main.c` files) for programs created in this tutorial.
+[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/03.%20malloc%2C%20the%20heap%20and%20the%20program%20break) contains the source code (`naive_malloc.c`, `version.c` & ``X-main.c` files) for programs created in this tutorial.
 
 ### Read more about the virtual memory
 
