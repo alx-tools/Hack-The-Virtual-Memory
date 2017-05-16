@@ -28,4 +28,4 @@ Status: _Published_
 
 In this fourth chapter we will look at the heap and how malloc works in order to answer some of the questions we ended with at the end of the previous chapter.
 
-Status: _In progress_
+Status: _Published_
