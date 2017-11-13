@@ -2,7 +2,7 @@
 
 ## Hack the virtual memory, chapter 4: the stack, registers and assembly code
 
-This is the fifth chapter in a series around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
+This is the fifth chapter in a series about virtual memory. The goal is to learn some CS basics in a different and more practical way.
 
 If you missed the previous chapters, you should probably start there:
 
@@ -13,9 +13,9 @@ If you missed the previous chapters, you should probably start there:
 
 ## The Stack
 
-As we have seen in [chapter 2](https://blog.holbertonschool.com/hack-the-virtual-memory-drawing-the-vm-diagram/) the stack resides at the high end of memory and grows downward. But how does it work exactly? How does it translate into assembly code? What are the registers used? In this chapter we will have a closer look at how the stack works, and how does the program automatically allocates and de-allocates local variables.
+As we have seen in [chapter 2](https://blog.holbertonschool.com/hack-the-virtual-memory-drawing-the-vm-diagram/), the stack resides at the high end of memory and grows downward. But how does it work exactly? How does it translate into assembly code? What are the registers used? In this chapter we will have a closer look at how the stack works, and how the program automatically allocates and de-allocates local variables.
 
-Once we will have understood this we will be able to play a little bit with it, and hijack the flow of our program. Ready? Let's start!
+Once we understand this, we will be able to play a bit with it, and hijack the flow of our program. Ready? Let's start!
 
 _Note: We will talk only about the user stack, as opposed to the kernel stack_
 
@@ -38,11 +38,11 @@ All scripts and programs have been tested on the following system:
   * objdump
     * GNU objdump (GNU Binutils for Ubuntu) 2.2
 
-**Everything we will write will be true for this system/environment, but may be different on another system**
+**Everything we cover will be true for this system/environment, but may be different on another system**
 
 ## Automatic allocation
 
-Let's firt look at a very simple program, with one function that uses one variable (`0-main.c`):
+Let's first look at a very simple program that has one function that uses one variable (`0-main.c`):
 
 ```c
 #include <stdio.h>
@@ -93,13 +93,13 @@ Let's focus on the first three lines for now:
   400531:       48 83 ec 10             sub    rsp,0x10
 ```
 
-The first lines of the function `main` reffers to `rbp` and `rsp`. These are special purpose registers. `rbp` is the base pointer, which points to the base of the current stack frame, and `rsp` is the stack pointer, which points to the top of the current stack frame.
+The first lines of the function `main` refers to `rbp` and `rsp`; these are special purpose registers. `rbp` is the base pointer, which points to the base of the current stack frame, and `rsp` is the stack pointer, which points to the top of the current stack frame.
 
-Let's decompose step by step what is happening here. This is the state of the stack when we enter the function `main`, before the first instruction is run:
+Let's decompose step by step what is happening here. This is the state of the stack when we enter the function `main` before the first instruction is run:
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-1.png)
 
-* `push rbp` instruction pushes the value of the register `rbp` into the stack. Because it "pushes" onto the stack, now the value of `rsp` is the memory address of the new top of the stack. The stack and the registers now look like this:
+* `push rbp` instruction pushes the value of the register `rbp` onto the stack. Because it "pushes" onto the stack, now the value of `rsp` is the memory address of the new top of the stack. The stack and the registers now look like this:
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-2.png)
 
@@ -107,15 +107,15 @@ Let's decompose step by step what is happening here. This is the state of the st
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-3.png)
 
-* `sub rsp, 0x10` creates a space to store values of locall variables. The space between `rbp` and `rp` is this space. Note that this space is large enough to store our varible of type `integer`
+* `sub rsp, 0x10` creates a space to store values of local variables. The space between `rbp` and `rp` is this space. Note that this space is large enough to store our variable of type `integer`
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-4.png)
 
-We just have created a space in memory - on the stack - for our local variables. This space is called a stack frame. Every function that has local variables will use a stack frame to store those variables.
+We have just created a space in memory - on the stack - for our local variables. This space is called a stack frame. Every function that has local variables will use a stack frame to store those variables.
 
 ## Using local variables
 
-The fourth line of assembly code of our `main` function is the folloing:
+The fourth line of assembly code of our `main` function is the following:
 
 ```asm
   400535:       c7 45 fc cc 03 00 00    mov    DWORD PTR [rbp-0x4],0x3cc
@@ -127,7 +127,7 @@ The fourth line of assembly code of our `main` function is the folloing:
 a = 972;
 ```
 
-`mov    DWORD PTR [rbp-0x4],0x3cc` is setting the memory at address `rbp - 4` to `972`. `[rbp - 4]` IS our local variable `a`. The computer doesn't actually know the name of the variable we use in our code, it simply reffers to memory addresses on the stack.
+`mov    DWORD PTR [rbp-0x4],0x3cc` is setting the memory at address `rbp - 4` to `972`. `[rbp - 4]` IS our local variable `a`. The computer doesn't actually know the name of the variable we use in our code, it simply refers to memory addresses on the stack.
 
 This is the state of the stack and the registers after this operation:
 
@@ -135,7 +135,7 @@ This is the state of the stack and the registers after this operation:
 
 ## `leave`, Automatic de-allocation
 
-If we now look at the end of the function, we will find this:
+If we look now at the end of the function, we will find this:
 
 ```
   400555:       c9                      leave  
@@ -147,7 +147,7 @@ The instruction `leave` sets `rsp` to `rbp`, and then pops the top of the stack 
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-leave-2.png)
 
-Because we did push the previous value of `rbp` onto the stack when we entered the function, `rbp` is in fact set to the previous value of `rbp`. That is how:
+Because we pushed the previous value of `rbp` onto the stack when we entered the function, `rbp` is now set to the previous value of `rbp`. This is how:
 
 * The local variables are "de-allocated", and
 * the stack frame of the previous function is restored before we leave the current function.
@@ -156,9 +156,9 @@ The state of the stack and the registers `rbp` and `rsp` are restored to the sam
 
 ## Playing with the stack
 
-When the variables or automatically de-allocated from the stack, they are not exactly completely "destroyed". Their values are still in memory, and this space will potentially be used by other functions. 
+When the variables are automatically de-allocated from the stack, they are not completely "destroyed". Their values are still in memory, and this space will potentially be used by other functions. 
 
-That is why it is important to initialize your variables when you write your code, because otherwise, they will take whatever value there is on the stack at the moment where the program is running.
+This is why it is important to initialize your variables when you write your code, because otherwise, they will take whatever value there is on the stack at the moment when the program is running.
 
 Let's consider the following C code (1-main.c):
 
@@ -194,7 +194,7 @@ int main(void)
 }
 ```
 
-As you can see, `func2` does not set the values of its local vaiables `a`, `b` and `c`. But if we compile and run this program, it will print...
+As you can see, `func2` does not set the values of its local vaiables `a`, `b` and `c`, yet if we compile and run this program it will print...
 
 ```bash
 holberton$ gcc 1-main.c && ./a.out 
@@ -203,8 +203,8 @@ a = 98, b = 972, c = 1070
 holberton$ 
 ```
 
-... the same values than the variables of `func1`! This is because of the way the stack works. The two functions do declare the same amount of variables, with the same type, in the same order. Their stack frame are exactly the same. When `func1` ends, the memory where the values of its local variables sit is not cleared. Only `rsp` is incremented.
-As a consequence, when we call `func2`, its stack frame sits at exactly the same place than the previous `func1` stack frame and the local variables of `func1` have the same values of the local variables of `func2` when we left `func2`.
+... the same variable values of `func1`! This is because of how the stack works. The two functions declared the same amount of variables, with the same type, in the same order. Their stack frames are exactly the same. When `func1` ends, the memory where the values of its local variables reside are not cleared - only `rsp` is incremented.
+As a consequence, when we call `func2` its stack frame sits at exactly the same place of the previous `func1` stack frame, and the local variables of `func1` have the same values of the local variables of `func2` when we left `func2`.
 
 Let's examine the assembly code to prove it:
 
@@ -260,7 +260,7 @@ holberton$ objdump -d -j .text -M intel
   4005ad:       0f 1f 00                nop    DWORD PTR [rax]
 ```
 
-As you can see, the way the stack framed is formed is always the same. In our two functions, the size of the stack frame is the same, since the local variables are the same.
+As you can see, the way the stack frame is formed is always consistent. In our two functions, the size of the stack frame is the same since the local variables are the same.
 
 ```asm
 push   rbp
@@ -276,13 +276,13 @@ The variables `a`, `b` and `c` are referenced the same way in the two functions:
 * `b` lies at memory address `rbp - 0x8`
 * `c` lies at memory address `rbp - 0x4`
 
-Note that the order of those variables on the stack is not the same as the order of those variables in our code. The compiler orders them as it wants, and you should never assume the order of your local variables in the stack.
+Note that the order of those variables on the stack is not the same as the order of those variables in our code. The compiler orders them as it wants, so you should never assume the order of your local variables in the stack.
 
-So this is the state of the stack and the registers `rbp` and `rsp` before we leave `func1`:
+So, this is the state of the stack and the registers `rbp` and `rsp` before we leave `func1`:
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-1.png)
 
-When we leave the function `func1`, we hit the instruction `leave` and as previously explained, this is the state of the stack, `rbp` and `rsp` right before returning to the function `main`:
+When we leave the function `func1`, we hit the instruction `leave`; as previously explained, this is the state of the stack, `rbp` and `rsp` right before returning to the function `main`:
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-2.png)
 
@@ -292,10 +292,10 @@ So when we enter `func2`, the local variables are set to whatever sits in memory
 
 ## ret
 
-You might have noticed that all our example functions end with the instruction `ret`. `ret` pops the return address from stack and jumps there. When functions are called the program uses the instruction `call`, that pushes the return address before it jumps to the first instruction of the function called.
-This is how the program is able to call a function and then return from the called function the calling function to execute its next instruction.
+You might have noticed that all our example functions end with the instruction `ret`. `ret` pops the return address from stack and jumps there. When functions are called the program uses the instruction `call` to push the return address before it jumps to the first instruction of the function called.
+This is how the program is able to call a function and then return from said function the calling function to execute its next instruction.
 
-So that means that there are more than just variables on the stack, there are also memory addresses of instructions. Let's revisit our `1-main.c` code.
+So this means that there are more than just variables on the stack, there are also memory addresses of instructions. Let's revisit our `1-main.c` code.
 
 When the `main` function calls `func1`,
 
@@ -304,19 +304,19 @@ When the `main` function calls `func1`,
 ```
 
 it pushes the memory address of the next instruction onto the stack, and then jumps to `func1`.
-As a consequence, before executing any instruction in `func1`, the top of the stack contains this address, so `rsp` points to this value.
+As a consequence, before executing any instructions in `func1`, the top of the stack contains this address, so `rsp` points to this value.
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-call.png)
 
-And after the stack frame of `func1` is formed, the stack looks like this:
+After the stack frame of `func1` is formed, the stack looks like this:
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
 ## Wrapping everything up
 
-Given what we just learned, we can directly the value of `rbp` to access all our local variables, as well as the saved `rbp` value on the stack and the return address values of our functions.
+Given what we just learned, we can directly [what did you want to say here?] the value of `rbp` to access all our local variables, as well as the saved `rbp` value on the stack and the return address values of our functions.
 
-To do so in C, we ca use:
+To do so in C, we can use:
 
 ```c
 	register long rsp asm ("rsp");
@@ -379,7 +379,7 @@ int main(void)
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
-From our previous "discoveries", we know that our variables are referenced via `rbp` - 0xX:
+From our previous discoveries, we know that our variables are referenced via `rbp` - 0xX:
 
   * `a` is at `rbp - 0xc`
   * `b` is at `rbp - 0x8`
@@ -390,13 +390,13 @@ So in order to get the values of those variables, we need to dereference `rbp`. 
 * cast our variable `rbp` to a `char *`: `(char *)rbp`
 * subtract the correct amount of bytes to get the address of where the variable is in memory: `(char *)rbp) - 0xc`
 * cast it again to a pointer pointing to an `int` since `a` is of type `int`: `(int *)(((char *)rbp) - 0xc)`
-* and derefence it to get the value sitting at this address: `*(int *)(((char *)rbp) - 0xc)`
+* and dereference it to get the value sitting at this address: `*(int *)(((char *)rbp) - 0xc)`
 
 ### The saved `rbp` value
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
-Looking at the above diagmra, the current `rbp` directly points to the saved `rbp`, so we simply have to cast our variable `rbp` to a pointer to an `unsigned long int` and dereference it: `*(unsigned long int *)rbp`.
+Looking at the above diagram, the current `rbp` directly points to the saved `rbp`, so we simply have to cast our variable `rbp` to a pointer to an `unsigned long int` and dereference it: `*(unsigned long int *)rbp`.
 
 ### The return address value
 
@@ -406,7 +406,7 @@ The return address value is right before the saved previous `rbp` on the stack. 
 
 * cast our variable `rbp` to a `char *`: `(char *)rbp`
 * add 8 to this value: ((char *)rbp + 8)
-* cast is to point to an `unsigned long int`: `(unsigned long int *)((char *)rbp + 8)`
+* cast it to point to an `unsigned long int`: `(unsigned long int *)((char *)rbp + 8)`
 * dereference it to get the value at this address: `*(unsigned long int *)((char *)rbp + 8)`
 
 ### The output of our program
@@ -437,7 +437,7 @@ We can see that:
 * the difference between `rsp` and `rbp` is 0x10, as seen in the assembly code (`sub rsp,0x10`)
 * in the `main` function, `rsp` == `rbp` because there are no local variables
 
-The return address from `func1` is `0x400697`. Let's double check that this seems correct by disassembling the program. If we are correct, this should be the address of the instruction right after the call of `func1` in the `main` function.
+The return address from `func1` is `0x400697`. Let's double check this assumption by disassembling the program. If we are correct, this should be the address of the instruction right after the call of `func1` in the `main` function.
 
 ```bash
 holberton$ objdump -d -j .text -M intel | less
@@ -629,7 +629,7 @@ We have called the function `bye`, without calling it! :)
 
 ## Outro
 
-I hope you enjoyed it and you learned a couple of things about the stack. As usual, to be continued! Let me know if you have something you would like me to cover in the next chapter.
+I hope that you enjoyed this and learned a couple of things about the stack. As usual, this will be continued! Let me know if you have anything you would like me to cover in the next chapter.
 
 ### Questions? Feedback?
 
@@ -640,7 +640,7 @@ Happy Hacking!
 
 ### Thank you for reading!
 
-As always, no-one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments if you find anything I missed.
+As always, no one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/) of course), so don't hesitate to contribute or send me your comments if you find anything I missed.
 
 ### Files
 
