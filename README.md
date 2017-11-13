@@ -30,4 +30,6 @@ In this fourth chapter we will look at the heap and how malloc works in order to
 
 Status: _Published_
 
-### 04. TBD
+### 04. The stack, registers and assembly
+
+Status: _In progress_
