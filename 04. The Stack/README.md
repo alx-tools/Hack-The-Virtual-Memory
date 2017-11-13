@@ -1,4 +1,4 @@
-## Hack the virtual memory, chapter 4: the stack
+## Hack the virtual memory, chapter 4: the stack, registers and assembly code
 
 This is the fifth chapter in a series around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
 
@@ -11,11 +11,11 @@ If you missed the previous chapters, you should probably start there:
 
 ## The Stack
 
-As we have seen in [chapter 2](https://blog.holbertonschool.com/hack-the-virtual-memory-drawing-the-vm-diagram/) the stack resides at the high end of memory and grows downward. But how does it work exactly? In this chapter we will have a closer look at how the stack works, and how does the program automatically allocates and de-allocates local variables.
+As we have seen in [chapter 2](https://blog.holbertonschool.com/hack-the-virtual-memory-drawing-the-vm-diagram/) the stack resides at the high end of memory and grows downward. But how does it work exactly? How does it translate into assembly code? What are the registers used? In this chapter we will have a closer look at how the stack works, and how does the program automatically allocates and de-allocates local variables.
 
 Once we will have understood this we will be able to play a little bit with it, and hijack the flow of our program. Ready? Let's start!
 
-_Note: In this chapter we will talk only about the user stack, as opposed to the kernel stack_
+_Note: We will talk only about the user stack, as opposed to the kernel stack_
 
 ## Prerequisites
 
