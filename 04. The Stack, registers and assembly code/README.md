@@ -1,3 +1,5 @@
+![hack the virtual memory, the stack, registers and assembly code](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack-the-virtual-memory-the-stack-rsp-rbp.png)
+
 ## Hack the virtual memory, chapter 4: the stack, registers and assembly code
 
 This is the fifth chapter in a series around virtual memory. The goal is to learn some CS basics, but in a different and more practical way.
@@ -95,19 +97,19 @@ The first lines of the function `main` reffers to `rbp` and `rsp`. These are spe
 
 Let's decompose step by step what is happening here. This is the state of the stack when we enter the function `main`, before the first instruction is run:
 
-stack-step-1
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-1.png)
 
 * `push rbp` instruction pushes the value of the register `rbp` into the stack. Because it "pushes" onto the stack, now the value of `rsp` is the memory address of the new top of the stack. The stack and the registers now look like this:
 
-stack-step-2
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-2.png)
 
 * `mov rbp, rsp` copies the value of the stack pointer `rsp` to the base pointer `rbp` `rpb and `rsp` now both points to the top of the previous stack frame
 
-stack-step-3
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-3.png)
 
 * `sub rsp, 0x10` creates a space to store values of locall variables. The space between `rbp` and `rp` is this space. Note that this space is large enough to store our varible of type `integer`
 
-stack-step-4
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-4.png)
 
 We just have created a space in memory - on the stack - for our local variables. This space is called a stack frame. Every function that has local variables will use a stack frame to store those variables.
 
@@ -129,7 +131,7 @@ a = 972;
 
 This is the state of the stack and the registers after this operation:
 
-stack-variable
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-variable.png)
 
 ## `leave`, Automatic de-allocation
 
@@ -141,9 +143,9 @@ If we now look at the end of the function, we will find this:
 
 The instruction `leave` sets `rsp` to `rbp`, and then pops the top of the stack into `rbp`.
 
-stack-leave-1
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-leave-1.png)
 
-stack-leave-2
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-leave-2.png)
 
 Because we did push the previous value of `rbp` onto the stack when we entered the function, `rbp` is in fact set to the previous value of `rbp`. That is how:
 
@@ -278,15 +280,15 @@ Note that the order of those variables on the stack is not the same as the order
 
 So this is the state of the stack and the registers `rbp` and `rsp` before we leave `func1`:
 
-stack-func1-1
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-1.png)
 
 When we leave the function `func1`, we hit the instruction `leave` and as previously explained, this is the state of the stack, `rbp` and `rsp` right before returning to the function `main`:
 
-stack-func1-2
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-2.png)
 
 So when we enter `func2`, the local variables are set to whatever sits in memory on the stack, and that is why their values are the same as the local variables of the function `func1`.
 
-stack-func2-1
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func2-1.png)
 
 ## ret
 
@@ -304,11 +306,11 @@ When the `main` function calls `func1`,
 it pushes the memory address of the next instruction onto the stack, and then jumps to `func1`.
 As a consequence, before executing any instruction in `func1`, the top of the stack contains this address, so `rsp` points to this value.
 
-stack-call
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-call.png)
 
 And after the stack frame of `func1` is formed, the stack looks like this:
 
-stack-func1-3
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
 ## Wrapping everything up
 
@@ -375,7 +377,7 @@ int main(void)
 
 ### Getting the values of the variables
 
-stack-func1-3
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
 From our previous "discoveries", we know that our variables are referenced via `rbp` - 0xX:
 
@@ -392,13 +394,13 @@ So in order to get the values of those variables, we need to dereference `rbp`. 
 
 ### The saved `rbp` value
 
-stack-func1-3
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
 Looking at the above diagmra, the current `rbp` directly points to the saved `rbp`, so we simply have to cast our variable `rbp` to a pointer to an `unsigned long int` and dereference it: `*(unsigned long int *)rbp`.
 
 ### The return address value
 
-stack-func1-3
+![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-func1-3.png)
 
 The return address value is right before the saved previous `rbp` on the stack. `rbp` is 8 bytes long, so we simply need to add 8 to the current value of `rbp` to get the address where this return value is on the stack. This is how we do it:
 
