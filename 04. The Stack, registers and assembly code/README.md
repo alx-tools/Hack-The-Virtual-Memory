@@ -644,11 +644,11 @@ As always, no one is perfect (except [Chuck](http://codesqueeze.com/the-ultimate
 
 ### Files
 
-[This repo]() contains the source code (`X-main.c` files) for programs created in this tutorial.
+[This repo](https://github.com/holbertonschool/Hack-The-Virtual-Memory/tree/master/04.%20The%20Stack%2C%20registers%20and%20assembly%20code) contains the source code (`X-main.c` files) for programs created in this tutorial.
 
 ### Read more about the virtual memory
 
-Follow [@holbertonschool](https://twitter.com/holbertonschool) or [@julienbarbier42](https://twitter.com/julienbarbier42) on Twitter to get the next chapters! This was the fourth chapter in our series on the virtual memory. If you missed the previous ones, here are the links to them:
+Follow [@holbertonschool](https://twitter.com/holbertonschool) or [@julienbarbier42](https://twitter.com/julienbarbier42) on Twitter to get the next chapters! This was the fifth chapter in our series on the virtual memory. If you missed the previous ones, here are the links to them:
 
 - Chapter 0: [Hack The Virtual Memory: C strings & /proc](https://blog.holbertonschool.com/hack-the-virtual-memory-c-strings-proc/)
 - Chapter 1: [Hack The Virtual Memory: Python bytes](https://blog.holbertonschool.com/hack-the-virtual-memory-python-bytes/)
