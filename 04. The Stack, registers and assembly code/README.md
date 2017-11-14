@@ -159,7 +159,7 @@ When the variables are automatically de-allocated from the stack, they are not c
 
 This is why it is important to initialize your variables when you write your code, because otherwise, they will take whatever value there is on the stack at the moment when the program is running.
 
-Let's consider the following C code (1-main.c):
+Let's consider the following C code (`1-main.c`):
 
 ```c
 #include <stdio.h>
