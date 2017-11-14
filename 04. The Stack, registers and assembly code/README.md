@@ -106,7 +106,7 @@ Let's decompose step by step what is happening here. This is the state of the st
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-3.png)
 
-* `sub rsp, 0x10` creates a space to store values of local variables. The space between `rbp` and `rp` is this space. Note that this space is large enough to store our variable of type `integer`
+* `sub rsp, 0x10` creates a space to store values of local variables. The space between `rbp` and `rsp` is this space. Note that this space is large enough to store our variable of type `integer`
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-4.png)
 
