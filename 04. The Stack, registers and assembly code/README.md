@@ -267,7 +267,7 @@ mov    rbp,rsp
 sub    rsp,0x10
 ```
 
-And the functions ends with the `leave` statement.
+And both functions end with the `leave` statement.
 
 The variables `a`, `b` and `c` are referenced the same way in the two functions:
 
