@@ -1,4 +1,4 @@
-![hack the virtual memory, the stack, registers and assembly code](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack-the-virtual-memory-the-stack-rsp-rbp.png)
+![hack the virtual memory, the stack, registers and assembly code](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/hack-the-virtual-memory-the-stack-rsp-rbp2.png)
 
 ## Hack the virtual memory, chapter 4: the stack, registers and assembly code
 
