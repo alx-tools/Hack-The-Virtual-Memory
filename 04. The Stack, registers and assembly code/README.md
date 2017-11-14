@@ -63,7 +63,7 @@ holberton$ gcc 0-main.c
 holberton$ objdump -d -j .text -M intel
 ```
 
-The assembly code produced for main starts like this:
+The assembly code produced for our `main` function is the following:
 
 ```asm
 000000000040052d <main>:
