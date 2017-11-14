@@ -103,7 +103,7 @@ Let's decompose step by step what is happening here. This is the state of the st
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-2.png)
 
-* `mov rbp, rsp` copies the value of the stack pointer `rsp` to the base pointer `rbp` `rpb and `rsp` now both points to the top of the previous stack frame
+* `mov rbp, rsp` copies the value of the stack pointer `rsp` to the base pointer `rbp` -> `rpb` and `rsp` now both points to the top of the previous stack frame
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-3.png)
 
