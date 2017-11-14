@@ -27,7 +27,6 @@ In order to fully understand this article, you will need to know:
 
 ## Environment
 
-Environment
 All scripts and programs have been tested on the following system:
 
 * Ubuntu
