@@ -203,7 +203,7 @@ holberton$
 ```
 
 ... the same variable values of `func1`! This is because of how the stack works. The two functions declared the same amount of variables, with the same type, in the same order. Their stack frames are exactly the same. When `func1` ends, the memory where the values of its local variables reside are not cleared - only `rsp` is incremented.
-As a consequence, when we call `func2` its stack frame sits at exactly the same place of the previous `func1` stack frame, and the local variables of `func1` have the same values of the local variables of `func2` when we left `func2`.
+As a consequence, when we call `func2` its stack frame sits at exactly the same place of the previous `func1` stack frame, and the local variables of `func2` have the same values of the local variables of `func1` when we left `func1`.
 
 Let's examine the assembly code to prove it:
 
