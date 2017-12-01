@@ -651,7 +651,7 @@ Follow [@holbertonschool](https://twitter.com/holbertonschool) or [@julienbarbie
 
 - Chapter 0: [Hack The Virtual Memory: C strings & /proc](https://blog.holbertonschool.com/hack-the-virtual-memory-c-strings-proc/)
 - Chapter 1: [Hack The Virtual Memory: Python bytes](https://blog.holbertonschool.com/hack-the-virtual-memory-python-bytes/)
-- Chapter 2: [Hack The Virtual Memory: Drawing the VM diagram](https://blog.holbertonschool.com/hack-
+- Chapter 2: [Hack The Virtual Memory: Drawing the VM diagram](https://blog.holbertonschool.com/hack-the-virtual-memory-drawing-the-vm-diagram/)
 - Chapter 3: [Hack the Virtual Memory: malloc, the heap & the program break](https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/)
 
 _Many thanks to [Naomi](https://twitter.com/NamoDawn) for proof-reading!_ :)
