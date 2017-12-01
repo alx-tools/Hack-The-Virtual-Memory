@@ -654,4 +654,4 @@ Follow [@holbertonschool](https://twitter.com/holbertonschool) or [@julienbarbie
 - Chapter 2: [Hack The Virtual Memory: Drawing the VM diagram](https://blog.holbertonschool.com/hack-
 - Chapter 3: [Hack the Virtual Memory: malloc, the heap & the program break](https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/)
 
-_Many thanks to [Naomi](https://twitter.com/NamoDawn) & [Tim](https://twitter.com/wintermanc3r) for proof-reading!_ :)
+_Many thanks to [Naomi](https://twitter.com/NamoDawn) for proof-reading!_ :)
