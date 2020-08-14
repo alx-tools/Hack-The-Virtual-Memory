@@ -102,7 +102,7 @@ Let's decompose step by step what is happening here. This is the state of the st
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-2.png)
 
-* `mov rbp, rsp` copies the value of the stack pointer `rsp` to the base pointer `rbp` -> `rpb` and `rsp` now both point to the top of the stack
+* `mov rbp, rsp` copies the value of the stack pointer `rsp` to the base pointer `rbp` -> `rbp` and `rsp` now both point to the top of the stack
 
 ![the stack](https://s3-us-west-1.amazonaws.com/holbertonschool/medias/stack-step-3.png)
 
@@ -339,7 +339,7 @@ void func1(void)
 	b = 972;
 	c = a + b;
 	printf("a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func1, rpb = %lx\n", rbp);
+	printf("func1, rbp = %lx\n", rbp);
 	printf("func1, rsp = %lx\n", rsp);
 	printf("func1, a = %d\n", *(int *)(((char *)rbp) - 0xc) );
 	printf("func1, b = %d\n", *(int *)(((char *)rbp) - 0x8) );
@@ -357,7 +357,7 @@ void func2(void)
 	register long rbp asm ("rbp");
 
 	printf("func2, a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func2, rpb = %lx\n", rbp);
+	printf("func2, rbp = %lx\n", rbp);
 	printf("func2, rsp = %lx\n", rsp);
 }
 
@@ -366,7 +366,7 @@ int main(void)
 	register long rsp asm ("rsp");
 	register long rbp asm ("rbp");
 
-	printf("main, rpb = %lx\n", rbp);
+	printf("main, rbp = %lx\n", rbp);
 	printf("main, rsp = %lx\n", rsp);
 	func1();
 	func2();
@@ -412,10 +412,10 @@ The return address value is right before the saved previous `rbp` on the stack. 
 
 ```bash
 holberton$ gcc 2-main.c && ./a.out 
-main, rpb = 7ffc78e71b70
+main, rbp = 7ffc78e71b70
 main, rsp = 7ffc78e71b70
 a = 98, b = 972, c = 1070
-func1, rpb = 7ffc78e71b60
+func1, rbp = 7ffc78e71b60
 func1, rsp = 7ffc78e71b50
 func1, a = 98
 func1, b = 972
@@ -423,7 +423,7 @@ func1, c = 1070
 func1, previous rbp value = 7ffc78e71b70
 func1, return address value = 400697
 func2, a = 98, b = 972, c = 1070
-func2, rpb = 7ffc78e71b60
+func2, rbp = 7ffc78e71b60
 func2, rsp = 7ffc78e71b50
 holberton$
 ```
@@ -494,7 +494,7 @@ void func1(void)
 	b = 972;
 	c = a + b;
 	printf("a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func1, rpb = %lx\n", rbp);
+	printf("func1, rbp = %lx\n", rbp);
 	printf("func1, rsp = %lx\n", rsp);
 	printf("func1, a = %d\n", *(int *)(((char *)rbp) - 0xc) );
 	printf("func1, b = %d\n", *(int *)(((char *)rbp) - 0x8) );
@@ -512,7 +512,7 @@ void func2(void)
 	register long rbp asm ("rbp");
 
 	printf("func2, a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func2, rpb = %lx\n", rbp);
+	printf("func2, rbp = %lx\n", rbp);
 	printf("func2, rsp = %lx\n", rsp);
 }
 
@@ -521,7 +521,7 @@ int main(void)
 	register long rsp asm ("rsp");
 	register long rbp asm ("rbp");
 
-	printf("main, rpb = %lx\n", rbp);
+	printf("main, rbp = %lx\n", rbp);
 	printf("main, rsp = %lx\n", rsp);
 	func1();
 	func2();
@@ -569,7 +569,7 @@ void func1(void)
 	b = 972;
 	c = a + b;
 	printf("a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func1, rpb = %lx\n", rbp);
+	printf("func1, rbp = %lx\n", rbp);
 	printf("func1, rsp = %lx\n", rsp);
 	printf("func1, a = %d\n", *(int *)(((char *)rbp) - 0xc) );
 	printf("func1, b = %d\n", *(int *)(((char *)rbp) - 0x8) );
@@ -589,7 +589,7 @@ void func2(void)
 	register long rbp asm ("rbp");
 
 	printf("func2, a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func2, rpb = %lx\n", rbp);
+	printf("func2, rbp = %lx\n", rbp);
 	printf("func2, rsp = %lx\n", rsp);
 }
 
@@ -598,7 +598,7 @@ int main(void)
 	register long rsp asm ("rsp");
 	register long rbp asm ("rbp");
 
-	printf("main, rpb = %lx\n", rbp);
+	printf("main, rbp = %lx\n", rbp);
 	printf("main, rsp = %lx\n", rsp);
 	func1();
 	func2();
@@ -608,10 +608,10 @@ int main(void)
 
 ```bash
 holberton$ gcc 4-main.c && ./a.out
-main, rpb = 7fff62ef1b60
+main, rbp = 7fff62ef1b60
 main, rsp = 7fff62ef1b60
 a = 98, b = 972, c = 1070
-func1, rpb = 7fff62ef1b50
+func1, rbp = 7fff62ef1b50
 func1, rsp = 7fff62ef1b40
 func1, a = 98
 func1, b = 972

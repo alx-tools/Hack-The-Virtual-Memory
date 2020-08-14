@@ -19,7 +19,7 @@ void func1(void)
 	b = 972;
 	c = a + b;
 	printf("a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func1, rpb = %lx\n", rbp);
+	printf("func1, rbp = %lx\n", rbp);
 	printf("func1, rsp = %lx\n", rsp);
 	printf("func1, a = %d\n", *(int *)(((char *)rbp) - 0xc) );
 	printf("func1, b = %d\n", *(int *)(((char *)rbp) - 0x8) );
@@ -37,7 +37,7 @@ void func2(void)
 	register long rbp asm ("rbp");
 
 	printf("func2, a = %d, b = %d, c = %d\n", a, b, c);
-	printf("func2, rpb = %lx\n", rbp);
+	printf("func2, rbp = %lx\n", rbp);
 	printf("func2, rsp = %lx\n", rsp);
 }
 
@@ -46,7 +46,7 @@ int main(void)
 	register long rsp asm ("rsp");
 	register long rbp asm ("rbp");
 
-	printf("main, rpb = %lx\n", rbp);
+	printf("main, rbp = %lx\n", rbp);
 	printf("main, rsp = %lx\n", rsp);
 	func1();
 	func2();
